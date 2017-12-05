@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <tabs>
+        <tab
+            icon="@android:drawable/ic_dialog_dialer"
+            id="@+id/nav1"
+            title="alert" />
+
+        <tab
+            icon="@android:drawable/ic_btn_speak_now"
+            id="@+id/nav2"
+            title="map" />
+
+        <tab
+            icon="@android:drawable/ic_dialog_alert"
+            id="@+id/nav3"
+            title="e-mail" />
+
+        <tab
+            icon="@android:drawable/ic_dialog_map"
+            id="@+id/nav4"
+            title="info" />
+
+        <tab
+            icon="@android:drawable/ic_dialog_email"
+            id="@+id/nav5"
+            title="dialer" />
+    </tabs>
+
+</resources>

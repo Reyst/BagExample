@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="gsi.reyst.bottom.nav.MainActivity">
+
+    <item
+        android:id="@+id/nav1"
+        android:orderInCategory="100"
+        android:title="alert"
+        android:icon="@android:drawable/ic_dialog_alert"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText"
+        />
+
+
+    <item
+        android:id="@+id/nav2"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="map"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText"
+        />
+
+    <item
+        android:id="@+id/nav3"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="e-mail"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText"
+        />
+
+    <item
+        android:id="@+id/nav4"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="info"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText"
+        />
+
+    <item
+        android:id="@+id/nav5"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="dialer"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText"
+        />
+
+</menu>
