@@ -55,15 +55,18 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <RelativeLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:ignore="HardcodedText">
+        >
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nested_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/spacer"
+            tools:ignore="HardcodedText">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,6 +104,7 @@
                     android:text="5" />
 
                 <Button
+                    android:id="@+id/btn6"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:text="6" />
@@ -170,11 +174,14 @@
                     android:layout_height="56dp"
                     android:text="19" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp" />
-
             </LinearLayout>
-        </ScrollView>
-    </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.NestedScrollView>
+
+        <View
+            android:layout_alignParentBottom="true"
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
