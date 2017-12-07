@@ -8,30 +8,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.io.Serializable;
 
 
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
-    public static final String KEY_NAME = "name";
-    public static final String KEY_VISIBLE = "visible";
+//    public static final String KEY_NAME = "name";
+//    public static final String KEY_VISIBLE = "visible";
     private String _name = "";
     private boolean _visible = false;
 
-    public static Fragment getInstance(String name, boolean b) {
-        Fragment f = new Fragment1();
-        Bundle params = new Bundle(1);
-        params.putString(KEY_NAME, name);
-        params.putBoolean(KEY_VISIBLE, b);
-        f.setArguments(params);
-
-        return f;
-    }
+//    public static Fragment getInstance(String name, boolean b) {
+//        Fragment f = new Fragment1();
+//        Bundle params = new Bundle(1);
+//        params.putString(KEY_NAME, name);
+//        params.putBoolean(KEY_VISIBLE, b);
+//        f.setArguments(params);
+//
+//        return f;
+//    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        _name = getArguments().getString(KEY_NAME);
-        _visible = getArguments().getBoolean(KEY_VISIBLE);
+        _name = "name";//getArguments().getString(KEY_NAME);
+        _visible = true; //getArguments().getBoolean(KEY_VISIBLE);
 
     }
 
@@ -52,6 +53,14 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.btn3).setOnClickListener(this);
         view.findViewById(R.id.btn4).setOnClickListener(this);
         view.findViewById(R.id.btn5).setOnClickListener(this);
+        view.findViewById(R.id.btn6).setOnClickListener(this);
+
+        //(MeasureSpec.makeMeasureSpec(parentView.getWidth(), MeasureSpec.EXACTLY),
+        // MeasureSpec.makeMeasureSpec(MAX_HEIGHT, MeasureSpec.AT_MOST));
+
+        view.findViewById(R.id.nested_scroll).measure(
+                View.MeasureSpec.makeMeasureSpec(view.getMeasuredWidth(), View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight(), View.MeasureSpec.EXACTLY));
     }
 
     @Override
@@ -78,7 +87,17 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
             case R.id.btn5:
                 ((MainActivity) getActivity()).onTabSelected(R.id.nav5);
                 break;
-
+            case R.id.btn6:
+                ((MainActivity) getActivity()).onShowAllChildren();
+                break;
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Log.d("CHECK", String.valueOf(getView().getMeasuredHeight()));
+
     }
 }
